@@ -18,11 +18,14 @@
   },
   "require": {
     "php": "^7.1",
-    "ang3/php-dev-binaries": "^1.0"
+    "ang3/php-dev-binaries": "^1.0",
+    "hautelook/alice-bundle": "^2.7",
+    "symfony/framework-bundle": "^4.1",
+    "symfony/browser-kit": "^4.0",
+    "symfony/phpunit-bridge": "^5.0 || ^6.0 || ^7.0",
+    "symfony/serializer": "^4.0",
+    "symfony/var-dumper": "^4.0"
   },
   "require-dev": {
-    "symfony/var-dumper": "^3.0 || ^4.0 || ^5.0",
-    "symfony/phpunit-bridge": "^5.0 || ^6.0 || ^7.0",
-    "symfony/serializer": "^4.0 || ^5.0 || ^6.0"
   }
 }
