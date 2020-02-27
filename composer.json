@@ -1,0 +1,28 @@
+{
+  "name": "ang3/test-bundle",
+  "type": "symfony-bundle",
+  "homepage": "https://github.com/Ang3/test-bundle",
+  "description": "Test bundle for Symfony",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Joanis ROUANET",
+      "homepage": "https://github.com/Ang3"
+    }
+  ],
+  "autoload": {
+    "psr-4": {"Ang3\\Bundle\\TestBundle\\": "src/"}
+  },
+  "autoload-dev": {
+    "psr-4": { "Ang3\\Bundle\\TestBundle\\Tests\\": "tests/" }
+  },
+  "require": {
+    "php": "^7.1",
+    "ang3/php-dev-binaries": "^1.0"
+  },
+  "require-dev": {
+    "symfony/var-dumper": "^3.0 || ^4.0 || ^5.0",
+    "symfony/phpunit-bridge": "^5.0 || ^6.0 || ^7.0",
+    "symfony/serializer": "^4.0 || ^5.0 || ^6.0"
+  }
+}
