@@ -12,7 +12,7 @@
 	</php>
 
 	<testsuites>
-		<testsuite name="SMS tests">
+		<testsuite name="Tests suite">
 			<directory>tests</directory>
 		</testsuite>
 	</testsuites>

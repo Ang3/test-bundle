@@ -3,3 +3,6 @@ parameters:
     - %currentWorkingDirectory%/src
   checkMissingIterableValueType: false
   checkGenericClassInNonGenericObjectType: false
+  ignoreErrors:
+    - '#Parameter \#\d+ \$(\w+) of (function|class|method) (.*) expects (.*), PHPUnit\\Framework\\MockObject\\MockObject given\.$#'
+    #- '#Access to an undefined property PHPUnit\\Framework\\MockObject\\MockObject::\$(\w+)\.$#'

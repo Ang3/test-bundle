@@ -2,20 +2,15 @@
 
 namespace Ang3\Bundle\TestBundle\Test;
 
-use Doctrine\Bundle\DoctrineBundle\Registry;
-use Doctrine\ORM\EntityManagerInterface;
-use Hautelook\AliceBundle\PhpUnit\RefreshDatabaseTrait;
-use InvalidArgumentException;
-use LogicException;
-use RuntimeException;
 use Symfony\Bundle\FrameworkBundle\Client;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use Symfony\Component\HttpFoundation\Response;
 
 /**
+ * @abstract
+ *
  * @author Joanis ROUANET
  */
-class ApiTestCase extends WebTestCase
+abstract class ApiTestCase extends WebTestCase
 {
     /**
      * @param mixed $data
@@ -30,24 +25,24 @@ class ApiTestCase extends WebTestCase
         return sprintf('Basic %s', base64_encode(sprintf('%s:%s', $username, $password)));
     }
 
-    public function createJsonClient(array $headers = [], array $options = [], array $server = []): Client
+    public static function createJsonClient(array $headers = [], array $options = [], array $server = []): Client
     {
-        return parent::createClient(array_merge($headers, [
+        return self::createClient(array_merge($headers, [
             'Content-Type' => 'application/json',
         ]), $options, $server);
     }
 
-    public function createXmlClient(array $headers = [], array $options = [], array $server = []): Client
+    public static function createXmlClient(array $headers = [], array $options = [], array $server = []): Client
     {
-        return parent::createClient(array_merge($headers, [
+        return self::createClient(array_merge($headers, [
             'Content-Type' => 'application/xml',
         ]), $options, $server);
     }
 
-    public function createClient(array $headers = [], array $options = [], array $server = []): Client
+    public static function createClient(array $headers = [], array $options = [], array $server = []): Client
     {
-        foreach($headers as $name => $value) {
-            if(!preg_match('#^HTTP_#', $name)) {
+        foreach ($headers as $name => $value) {
+            if (!preg_match('#^HTTP_#', $name)) {
                 $headers[$name] = sprintf('HTTP_%s', $value);
             }
         }

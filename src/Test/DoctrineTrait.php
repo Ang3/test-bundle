@@ -5,12 +5,8 @@ namespace Ang3\Bundle\TestBundle\Test;
 use Doctrine\Bundle\DoctrineBundle\Registry;
 use Doctrine\ORM\EntityManagerInterface;
 use Hautelook\AliceBundle\PhpUnit\RefreshDatabaseTrait;
-use InvalidArgumentException;
 use LogicException;
 use RuntimeException;
-use Symfony\Bundle\FrameworkBundle\Client;
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase as BaseWebTestCase;
-use Symfony\Component\HttpFoundation\Response;
 
 /**
  * @author Joanis ROUANET
@@ -46,8 +42,8 @@ trait DoctrineTrait
      */
     public function getDoctrine()
     {
-        if(null === $this->doctrine) {
-            if(!class_exists(Registry::class)) {
+        if (null === $this->doctrine) {
+            if (!class_exists(Registry::class)) {
                 throw new LogicException(sprintf('The class "%s" was not found - Did you forget to install the package "doctrine/orm"?', $registryClass));
             }
 
